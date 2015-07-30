@@ -40,3 +40,8 @@ nav span {
 #photo img {
   max-width: 90px;
 }
+
+#ErrorMsgs {
+  color: #f61;
+  font-size: smaller;
+}
