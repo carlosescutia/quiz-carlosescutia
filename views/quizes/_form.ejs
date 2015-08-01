@@ -2,5 +2,13 @@
 <input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/> <br />
 <label for="resp" class="rem">Respuesta:</label>
 <input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/> <br />
+<label for="tematico" class="rem">Indice tematico:</label>
+<select name="quiz[tematico]" id="tematico">
+  <option value="otro" <%= quiz.tematico === "otro" ? "selected" : "" %> >Otro</option>
+  <option value="humanidades" <%= quiz.tematico === "humanidades" ? "selected" : "" %> >Humanidades</option>
+  <option value="ocio" <%= quiz.tematico === "ocio" ? "selected" : "" %> >Ocio</option>
+  <option value="ciencia" <%= quiz.tematico === "ciencia" ? "selected" : "" %> >Ciencia</option>
+  <option value="tecnologia" <%= quiz.tematico === "tecnologia" ? "selected" : "" %> >Tecnologia</option>
+</select>
 <a href="/quizes"><button type="button">Cancelar</button></a>
 <input type="submit" value="Salvar">
