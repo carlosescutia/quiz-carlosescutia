@@ -25,13 +25,13 @@ exports.index = function(req, res) {
       function(quizes) {
         res.render('quizes/index.ejs', {quizes: quizes, errors: []});
       }
-    ).catch(function(error) {next(error); });
+    ).catch(function(error) {next(error)});
   } else {
     models.Quiz.findAll().then(
       function(quizes) {
         res.render('quizes/index.ejs', { quizes: quizes, errors: []});
       }
-    ).catch(function(error) { next(error); })
+    ).catch(function(error) { next(error)})
   }
 };
 
@@ -114,5 +114,5 @@ exports.update = function(req, res) {
 exports.destroy = function(req, res) {
   req.quiz.destroy().then( function() {
     res.redirect('/quizes');
-  }).catch(function(error) { next(error) });
+  }).catch(function(error) {next(error)});
 };
