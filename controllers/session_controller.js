@@ -33,6 +33,12 @@ exports.create = function(req, res) {
     // La sesion se define por la existencia de: req.session.user
     req.session.user = {id:user.id, username:user.username};
 
+    // auto logout
+    minutosexpira = 2;
+    var expira = new Date();
+    var expira = new Date(expira.getTime() + minutosexpira * 60 * 1000);
+    req.session.cookie.expires = expira;
+
     res.redirect(req.session.redir.toString());  // redireccion a path anterior a login
   });
 };
